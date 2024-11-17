@@ -1,12 +1,39 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
+:root.theme-dark {
+  --font-family: "IBM Plex Mono", sans-serif;
+  --bg-color: #000028;
+  --bg-image: url(../images/cover-image-dark.png);
+  --title-color: #db00ff;
+  --shadow-color: #ff0070;
+  --text-color: var(--bg-color);
+  --section-title-color: var(--shadow-color);
+  --section-bg-color: var(--shadow-color);
+  --accent-color: var(--shadow-color);
+  --discription-color: #f1b2ce;
+  --font-size: 18px;
+  --display-rec: initial;
+  --decorated-gap: 10px;
+  --nav-hover-color: rgba(255, 0, 112, 0.4);
+  --nav-focus-color: var(--shadow-color);
+  --a-focus-color: var(--discription-color);
+  --theme-menu-margin: 39px;
+}
 
 .page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --font-family: "IBM Plex Mono", sans-serif;
+  --bg-color: #000028;
+  --bg-image: url(../images/cover-image-dark.png);
+  --title-color: #db00ff;
+  --shadow-color: #ff0070;
+  --text-color: var(--bg-color);
+  --section-title-color: var(--shadow-color);
+  --section-bg-color: var(--shadow-color);
+  --accent-color: var(--shadow-color);
+  --discription-color: #f1b2ce;
+  --font-size: 18px;
+  --display-rec: initial;
+  --decorated-gap: 10px;
+  --nav-hover-color: rgba(255, 0, 112, 0.4);
+  --nav-focus-color: var(--shadow-color);
+  --a-focus-color: var(--discription-color);
+  --theme-menu-margin: 39px;
 }
