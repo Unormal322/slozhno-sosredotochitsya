@@ -2,6 +2,7 @@
   --font-family: "IBM Plex Mono", sans-serif;
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
+  --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --title-color: #db00ff;
   --shadow-color: #ff0070;
   --text-color: var(--bg-color);
@@ -15,6 +16,7 @@
   --nav-hover-color: rgba(255, 0, 112, 0.4);
   --nav-focus-color: var(--shadow-color);
   --a-focus-color: var(--discription-color);
+  --a-shadow-color: var(--shadow-color);
   --theme-menu-margin: 39px;
 }
 
@@ -22,6 +24,7 @@
   --font-family: "IBM Plex Mono", sans-serif;
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
+  --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --title-color: #db00ff;
   --shadow-color: #ff0070;
   --text-color: var(--bg-color);
@@ -35,5 +38,6 @@
   --nav-hover-color: rgba(255, 0, 112, 0.4);
   --nav-focus-color: var(--shadow-color);
   --a-focus-color: var(--discription-color);
+  --a-shadow-color: var(--shadow-color);
   --theme-menu-margin: 39px;
 }

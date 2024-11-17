@@ -244,6 +244,7 @@
   line-height: 130%;
   color: var(--section-title-color);
   margin-block-end: 19px;
+  inline-size: 355px;
 
   @media (768px <= width < 1024px) {
     inline-size: 236px;
@@ -292,7 +293,7 @@
 }
 
 .card__list-item-link {
-  text-shadow: 2px 2px 0 var(--shadow-color);
+  text-shadow: 2px 2px 0 var(--a-shadow-color);
   text-decoration: none;
 }
 
