@@ -2,10 +2,10 @@
   --bg-color: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);
   --title-color: #ffc2e6;
-  --shadow-color: #ff0070;
+  --shadow-color: #ff8dcb;
   --text-color: #353430;
   --section-title-color: var(--text-color);
-  --section-bg-color: #ff8dcb;
+  --section-bg-color: var(--shadow-color);
   --accent-color: var(--text-color);
   --discription-color: var(--text-color);
   --display-rec: none;
@@ -21,10 +21,10 @@
     --bg-color: #fff1f7;
     --bg-image: url(../images/cover-image-light.png);
     --title-color: #ffc2e6;
-    --shadow-color: #ff0070;
+    --shadow-color: #ff8dcb;
     --text-color: #353430;
     --section-title-color: var(--text-color);
-    --section-bg-color: #ff8dcb;
+    --section-bg-color: var(--shadow-color);
     --accent-color: var(--text-color);
     --discription-color: var(--text-color);
     --display-rec: none;
@@ -33,5 +33,11 @@
     --nav-focus-color: var(--text-color);
     --a-focus-color: var(--text-color);
     --a-shadow-color: var(--section-bg-color);
+  }
+}
+
+@media (prefers-color-scheme: light) and (widht >= 1024px) {
+  :root {
+    --shadow-color: #ff0070;
   }
 }
