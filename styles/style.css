@@ -182,7 +182,7 @@
   background-color: var(--section-bg-color);
 }
 
-.header__paragraph {
+.header__description {
   margin-block: 55px 56px;
   
   @media (768px <= width < 1024px) {
