@@ -37,9 +37,3 @@
     --a-shadow-color: var(--section-bg-color);
   }
 }
-
-@media (prefers-color-scheme: light) and (widht >= 1024px) {
-  :root {
-    --shadow-color: #ff0070;
-  }
-}
