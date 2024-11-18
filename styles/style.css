@@ -3,7 +3,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, #000028);
   background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-position: center;
@@ -18,6 +18,7 @@
   padding: 10px;
   display: grid;
   grid-template-rows: 1fr;
+  align-items: flex-start;
 
   @media (768px <= width < 1024px) {
     min-block-size: 1024px;
@@ -38,10 +39,10 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
-  inset-inline-end: var(--decorated-gap);
-  inset-block-start: var(--decorated-gap);
+  border-inline-end: 1px solid var(--accent-color, #ff0070);
+  border-block-start: 1px solid var(--accent-color, #ff0070);
+  inset-inline-end: var(--decorated-gap, 10px);
+  inset-block-start: var(--decorated-gap, 10px);
 
   @media (width >= 768px) {
     --decorated-gap: 20px;
@@ -54,10 +55,10 @@
   position: absolute;
   inline-size: 25px;
   block-size: 24px;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
-  inset-inline-start: var(--decorated-gap);
-  inset-block-end: var(--decorated-gap);
+  border-inline-start: 1px solid var(--accent-color, #ff0070);
+  border-block-end: 1px solid var(--accent-color, #ff0070);
+  inset-inline-start: var(--decorated-gap, 10px);
+  inset-block-end: var(--decorated-gap, 10px);
 
   @media (width >= 768px) {
     --decorated-gap: 20px;
@@ -77,11 +78,11 @@
 }
 
 .rec-text {
-  display: var(--display-rec);
+  display: var(--display-rec, initial);
   position: relative;
   text-transform: uppercase;
-  color: var(--accent-color);
-  font-size: var(--font-size);
+  color: var(--accent-color, #ff0070);
+  font-size: var(--font-size, 18px);
   font-family: var(--font-family);
   line-height: 139%;
   margin-inline-end: 28px;
@@ -93,8 +94,8 @@
   inline-size: 9px;
   block-size: 9px;
   border-radius: 100%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color, #ff0070);
+  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
   top: 30%;
   left: 130%;
 }
@@ -130,7 +131,7 @@
   padding: 0 13px 4px;
   text-transform: lowercase;
   font-family: var(--font-family);
-  font-size: var(--font-size);
+  font-size: var(--font-size, 18px);
   background: transparent;
   border: 1px solid transparent;
   outline: transparent;
@@ -139,7 +140,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border-color: var(--nav-hover-color);
+  border-color: var(--nav-hover-color, rgba(255, 0, 112, 0.4));
 }
 
 .header__theme-menu-button:focus {
@@ -147,30 +148,39 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--nav-focus-color);
+  border-bottom: 1px solid var(--nav-focus-color, #ff0070);
 }
 
 .header__theme-menu-button_active {
-  border-color: var(--accent-color);
+  border-color: var(--accent-color, #ff0070);
   pointer-events: none;
 }
 
-.header__title {
-  font-size: var(--title-font-size);
-  color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--shadow-color);
+.heading-decor {
+  font-size: var(--title-font-size, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
+  color: var(--title-color, #db00ff);
   line-height: 83%;
   font-weight: bold;
 
   @media (width >= 768px) {
     position: relative;
-    inset-inline-start: calc(-2 * var(--decorated-gap));
     --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   @media (width >= 1024px) {
-    grid-column: 1 / 3;
     --shadow-color: #ff0070;
+  }
+}
+
+.header__title {
+  text-shadow: 4px 4px 0 var(--shadow-color, #ff0070);
+
+  @media (width >= 768px) {
+    inset-inline-start: calc(-2 * var(--decorated-gap, 10px));
+  }
+
+  @media (width >= 1024px) {
+    grid-column: 1 / 3;
   }
 }
 
@@ -179,8 +189,8 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 130%;
-  color: var(--text-color);
-  background-color: var(--section-bg-color);
+  color: var(--text-color, #000028);
+  background-color: var(--section-bg-color, #ff0070);
 }
 
 .header__description {
@@ -210,14 +220,6 @@
   }
 }
 
-.section__content:nth-child(2) {
-  @media (width >= 1024px) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, max-content);
-  }
-}
-
 .section__content:not(:last-child) {
   margin-block-end: 50px;
 
@@ -238,37 +240,55 @@
   }
 }
 
+.section__content-various {
+  @media (768px <= width < 1024px) {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+  
+  @media (width >= 1024px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, max-content);
+    row-gap: 19px;
+  }
+}
+
 .section__content-title {
   font-family: var(--font-family);
   font-weight: bold;
-  font-size: var(--font-size);
+  font-size: var(--font-size, 18px);
   line-height: 130%;
-  color: var(--section-title-color);
+  color: var(--section-title-color, #ff0070);
   margin-block-end: 19px;
   inline-size: 355px;
 
   @media (768px <= width < 1024px) {
     inline-size: 236px;
+    margin-block-end: 0px;
   }
 
-  @media (width >=1024px) {
+  @media (width >= 1024px) {
     inline-size: 315px;
+    margin-block-end: 0px;
   }
 }
 
+.card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .card__list-different {
-  @media (width >=1024px) {
+  @media (width >= 1024px) {
     grid-row: 2;
     grid-column: 1 / 4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-}
-
-.card__list-item:not(:last-child),
-.section__list-text {
-  margin-block-end: 20px;
 }
 
 .card__list-item-title {
@@ -288,18 +308,22 @@
 .card__list-item-text {
   font-family: var(--font-family);
   font-weight: normal;
-  font-size: var(--font-size);
+  font-size: var(--font-size, 18px);
   line-height: 130%;
-  color: var(--discription-color);
+  color: var(--discription-color, #f1b2ce);
+}
+
+.card__list-item-text:not(:last-of-type) {
+  margin-block-end: 10px;
 }
 
 .card__list-item-link {
-  text-shadow: 2px 2px 0 var(--a-shadow-color);
+  text-shadow: 2px 2px 0 var(--a-shadow-color, #ff0070);
   text-decoration: none;
 }
 
 .card__list-item-link:hover {
-  border-bottom: 1px solid var(--discription-color);
+  border-bottom: 1px solid var(--discription-color, #f1b2ce);
 }
 
 .card__list-item-link:focus {
@@ -307,7 +331,7 @@
 }
 
 .card__list-item-link:focus-visible {
-  outline: 1px solid var(--discription-color);
+  outline: 1px solid var(--discription-color, #f1b2ce);
 }
 
 .card__gallery-list {
@@ -370,10 +394,6 @@
 }
 
 .footer__title {
-  margin-block-start: 0px;
-  text-shadow: 2px 2px 0 var(--shadow-color);
-
-  @media (width >= 768px) {
-    margin-inline-start: 0px;
-  }
+  padding-top: 3px;
+  text-shadow: 2px 2px 0 var(--shadow-color, #ff0070);
 }
