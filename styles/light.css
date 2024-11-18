@@ -1,4 +1,5 @@
 .page.theme_light {
+  --font-family: 'IBM Plex Mono', sans-serif;
   --bg-color: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);
   --title-color: #ffc2e6;
@@ -18,6 +19,7 @@
 
 @media (prefers-color-scheme: light) {
   :root {
+    --font-family: 'IBM Plex Mono', sans-serif;
     --bg-color: #fff1f7;
     --bg-image: url(../images/cover-image-light.png);
     --title-color: #ffc2e6;

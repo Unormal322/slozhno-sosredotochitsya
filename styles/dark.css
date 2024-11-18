@@ -1,5 +1,5 @@
 :root.theme-dark {
-  --font-family: "IBM Plex Mono", sans-serif;
+  --font-family: 'IBM Plex Mono', sans-serif;
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
   --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -21,7 +21,7 @@
 }
 
 .page.theme_dark {
-  --font-family: "IBM Plex Mono", sans-serif;
+  --font-family: 'IBM Plex Mono', sans-serif;
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
   --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
